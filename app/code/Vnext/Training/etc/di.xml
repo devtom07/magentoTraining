@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="slug" xsi:type="object">Vnext\Training\Console\Command\SlugCommand
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Vnext\Training\Api\Data\StudentInterface" type="Vnext\Training\Model\Student" />
+    <preference for="Vnext\Training\Api\Data\StudentSearchResultInterface" type="Vnext\Training\Model\StudentSearchResult" />
+    <preference for="Vnext\Training\Api\StudentRepositoryInterface" type="Vnext\Training\Model\StudentRepository" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="Vnext_Training_listing_data_source" xsi:type="string">
+                    Mageplaza\HelloWorld\Model\ResourceModel\Post\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+   
+</config>
