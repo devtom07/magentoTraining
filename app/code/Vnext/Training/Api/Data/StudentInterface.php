@@ -68,11 +68,11 @@ interface StudentInterface extends ExtensibleDataInterface
     /**
      * @return string
      */
-    public function getExtensionAttributes();
+    // public function getExtensionAttributes();
 
-    /**
-     * @param Magento4u\SampleRepository\Api\Data\StudentExtensionInterface $extensionAttributes
-     * @return mixed
-     */
-    public function setExtensionAttributes(StudentExtensionInterface $extensionAttributes);
+    // /**
+    //  * @param \Vnext\Training\Api\Data\StudentExtensionInterface $extensionAttributes
+    //  * @return mixed
+    //  */
+    // public function setExtensionAttributes(StudentExtensionInterface $extensionAttributes);
 }
