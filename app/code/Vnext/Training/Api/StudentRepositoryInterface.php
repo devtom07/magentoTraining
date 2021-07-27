@@ -1,7 +1,7 @@
 <?php
 
 namespace Vnext\Training\Api;
-
+use \Vnext\Training\Api\Data\StudentInterface;
 interface StudentRepositoryInterface
 {
 
