@@ -1,16 +1,27 @@
 <?php
-namespace Vnext\Training\Controller\Adminhtml;
-use Magento\Backend\App\Action;
-use Magento\Framework\View\Result\PageFactory;
 
-class  Index extends Action {
-    protected $_pageFactory;
-    public function __construct(Action\Context $context,PageFactory $pageFactory)
-    {
-        $this->_pageFactory = $pageFactory;
-        parent::__construct($context);
-    }
-    public function execute(){
-        return $this->_pageFactory->create();
-    }
+namespace Vnext\Training\Controller\Adminhtml\Student;
+
+class Index extends \Magento\Backend\App\Action
+{
+	protected $resultPageFactory = false;
+
+	public function __construct(
+		\Magento\Backend\App\Action\Context $context,
+		\Magento\Framework\View\Result\PageFactory $resultPageFactory
+	)
+	{
+		parent::__construct($context);
+		$this->resultPageFactory = $resultPageFactory;
+	}
+
+	public function execute()
+	{
+		$resultPage = $this->resultPageFactory->create();
+		$resultPage->getConfig()->getTitle()->prepend((__('Student')));
+
+		return $resultPage;
+	}
+
+
 }
