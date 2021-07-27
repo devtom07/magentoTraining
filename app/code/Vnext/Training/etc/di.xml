@@ -12,19 +12,18 @@
     <preference for="Vnext\Training\Api\Data\StudentInterface" type="Vnext\Training\Model\Student" />
     <preference for="Vnext\Training\Api\Data\StudentSearchResultInterface" type="Vnext\Training\Model\StudentSearchResult" />
     <preference for="Vnext\Training\Api\StudentRepositoryInterface" type="Vnext\Training\Model\StudentRepository" />
-
-
-    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
-            <arguments>
-                <argument name="collections" xsi:type="array">
-                    <item name="training__listing_data_source" xsi:type="string">helloworld_post_collection</item>
-                </argument>
-            </arguments>
-        </type>
-        <virtualType name="training_student_collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
-            <arguments>
-                <argument name="mainTable" xsi:type="string">training_student</argument>
-                <argument name="resourceModel" xsi:type="string">Vnext\Training\Model\ResourceModel\Student</argument>
-            </arguments>
-        </virtualType>
+     <!-- girdAdmin -->
+     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+     <arguments>
+     <argument name="collections" xsi:type="array">
+                <item name="admin_student_student_listing_data_source" xsi:type="string">Vnext\Training\Model\ResourceModel\Student\Collection</item>
+            </argument>
+     </arguments>
+          </type>
+     <virtualType name="Vnext\Training\Model\ResourceModel\Student\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">students</argument>
+            <argument name="resourceModel" xsi:type="string">Vnext\Training\Model\ResourceModel\Student</argument>
+        </arguments>
+    </virtualType>
     </config>
