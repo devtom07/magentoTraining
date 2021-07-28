@@ -16,11 +16,11 @@
      <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
      <arguments>
      <argument name="collections" xsi:type="array">
-                <item name="admin_student_student_listing_data_source" xsi:type="string">Vnext\Training\Model\ResourceModel\Student\Collection</item>
+                <item name="admin_student_student_listing_data_source" xsi:type="string">Vnext\Training\Model\ResourceModel\Student\Grid\Collection</item>
             </argument>
      </arguments>
           </type>
-     <virtualType name="Vnext\Training\Model\ResourceModel\Student\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+     <virtualType name="Vnext\Training\Model\ResourceModel\Student\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">students</argument>
             <argument name="resourceModel" xsi:type="string">Vnext\Training\Model\ResourceModel\Student</argument>
