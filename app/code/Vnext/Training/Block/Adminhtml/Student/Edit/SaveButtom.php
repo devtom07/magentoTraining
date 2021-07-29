@@ -14,7 +14,7 @@ use Magento\Ui\Component\Control\Container;
  * Class SaveButton
  * @package Magento\Customer\Block\Adminhtml\Edit
  */
-class SaveButton implements ButtonProviderInterface
+class SaveButtom implements ButtonProviderInterface
 {
     /**
      * @return array
@@ -63,7 +63,7 @@ class SaveButton implements ButtonProviderInterface
                         'buttonAdapter' => [
                             'actions' => [
                                 [
-                                    'targetName' => 'vnext_student_form.vnext_student_form',
+                                    'targetName' => 'admin_student_student_form.admin_student_student_form',
                                     'actionName' => 'save',
                                     'params' => [
                                         true,

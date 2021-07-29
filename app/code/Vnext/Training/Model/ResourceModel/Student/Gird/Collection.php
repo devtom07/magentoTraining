@@ -1,11 +1,14 @@
 <?php
-namespace Vnext\Training\Model\ResourceModel\Student\Gird;
+namespace Vnext\Training\Model\ResourceModel\Student\Grid;
+
 use Vnext\Training\Model\Student;
 use Magento\Framework\Api;
 use Magento\Framework\Event\ManagerInterface as EventManager;
 use Magento\Framework\Data\Collection\Db\FetchStrategyInterface as FetchStrategy;
 use Magento\Framework\Data\Collection\EntityFactoryInterface as EntityFactory;
 use Psr\Log\LoggerInterface as Logger;
+
+// use Magento\Framework\Api\Search\SearchResultInterface;
 
 class Collection extends \Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult
 {
@@ -47,4 +50,6 @@ class Collection extends \Magento\Framework\View\Element\UiComponent\DataProvide
         $this->studentModel = $studentModel;
         parent::__construct($entityFactory, $logger, $fetchStrategy, $eventManager, $mainTable, $resourceModel);
     }
+
+    
 }

@@ -2,7 +2,7 @@
 namespace Vnext\Training\Controller\Adminhtml\Student;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
-
+use Magento\Backend\Model\View\Result\ForwardFactory;
 /**
  * Create CMS block action.
  */
@@ -21,7 +21,7 @@ class News extends \Vnext\Training\Controller\Adminhtml\Block implements HttpGet
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\Registry $coreRegistry,
-        \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
+        ForwardFactory $resultForwardFactory
     ) {
         $this->resultForwardFactory = $resultForwardFactory;
         parent::__construct($context, $coreRegistry);

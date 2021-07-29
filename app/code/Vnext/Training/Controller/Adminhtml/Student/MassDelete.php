@@ -1,5 +1,6 @@
 <?php
 namespace Vnext\Training\Controller\Adminhtml\Student;
+
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\Model\View\Result\Redirect;
@@ -15,15 +16,15 @@ class MassDelete extends Action implements HttpPostActionInterface
     /**
      * Authorization level
      */
-    const ADMIN_RESOURCE = 'Vnext_training::students';
+    const ADMIN_RESOURCE = 'Vnext_Training::student';
 
     /**
-     * @var \Vnext\Training\Model\ResourceModel\Student\CollectionFactory
+     * @var \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory
      */
     protected $collectionFactory;
 
     /**
-     * @var \Vnext\Training\Api\StudentRepositoryInterface
+     * @var \Magento\Catalog\Api\CategoryRepositoryInterface
      */
     private $studentRepository;
 
@@ -37,8 +38,8 @@ class MassDelete extends Action implements HttpPostActionInterface
      *
      * @param \Magento\Backend\App\Action\Context $context
      * @param \Magento\Ui\Component\MassAction\Filter $filter
-     * @param \Vnext\Training\Model\ResourceModel\Student\CollectionFactory $collectionFactory
-     * @param \Vnext\Training\Api\StudentRepositoryInterface $studentRepository
+     * @param \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $collectionFactory
+     * @param \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository
      */
     public function __construct(
         Context $context,
@@ -53,24 +54,27 @@ class MassDelete extends Action implements HttpPostActionInterface
     }
 
     /**
-     * Student delete action
+     * Category delete action
      *
      * @return Redirect
      */
-    public function execute()
+    public function execute(): Redirect
     {
+        if (!$this->getRequest()->isPost()) {
+            throw new NotFoundException(__('Page not found'));
+        }
         $collection = $this->filter->getCollection($this->collectionFactory->create());
-        $collectionSize = $collection->getSize();
-
-        foreach ($collection as $block) {
-            $block->delete();
+        $categoryDeleted = 0;
+        foreach ($collection->getItems() as $category) {
+            $this->studentRepository->delete($category);
+            $categoryDeleted++;
         }
 
-        $this->messageManager->addSuccessMessage(__('A total of %1 record(s) have been deleted.', $collectionSize));
-
-        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
-        $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
-        return $resultRedirect->setPath('admin_student/student/index');
+        if ($categoryDeleted) {
+            $this->messageManager->addSuccessMessage(
+                __('A total of %1 record(s) have been deleted.', $categoryDeleted)
+            );
+        }
+        return $this->resultFactory->create(ResultFactory::TYPE_REDIRECT)->setPath('admin_student/student/index');
     }
 }
-
