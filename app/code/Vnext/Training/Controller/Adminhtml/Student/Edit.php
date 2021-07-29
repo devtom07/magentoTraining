@@ -16,6 +16,7 @@ class Edit extends \Magento\Backend\App\Action implements HttpGetActionInterface
      * Authorization level of a basic admin session
      *
      * @see _isAllowed()
+     * 
      */
     const ADMIN_RESOURCE = 'Vnext_Training::student';
     /**

@@ -19,7 +19,6 @@ class Index extends \Magento\Backend\App\Action
 	{
 		$resultPage = $this->resultPageFactory->create();
 		$resultPage->getConfig()->getTitle()->prepend((__('Student')));
-       
 		return $resultPage;
 	}
 

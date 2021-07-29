@@ -50,7 +50,7 @@ class Save extends \Vnext\Training\Controller\Adminhtml\Block implements HttpPos
         $this->dataPersistor = $dataPersistor;
         $this->studentFactory = $studentFactory;
         $this->resource = $resource;
-        parent::__construct($context, $coreRegistry)DataProvider
+        parent::__construct($context, $coreRegistry);
     }
 
     /**
