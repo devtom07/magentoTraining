@@ -1,18 +1,18 @@
 <?php
 namespace Vnext\Training\Plugin;
-
+use Magento\Catalog\Model\Product;
 class ProductAttributesUpdater
 {
-    public function beforeSetName(\Magento\Catalog\Model\Product $subject,$name)
+    public function beforeSetName(Product $subject,$name)
     {
         $name = "Anh Manh";
       return ['(' . $name . ')'];
     }
-    public function afterGetName(\Magento\Catalog\Model\Product $subject,$result){
-        $result = "Manh nguyen"
+    public function afterGetName(Product $subject,$result){
+        $result = "Manh nguyen";
       return '|' . $result . '|';
     }
-    public function aroundSave(\Magento\Catalog\Model\Product $subject, callable $proceed)
+    public function aroundSave(Product $subject, callable $proceed)
     {
         $someValue = $this->doSmthBeforeProductIsSaved();
         $returnValue = null;
@@ -24,7 +24,6 @@ class ProductAttributesUpdater
         if ($returnValue) {
             $this->postProductToFacebook();
         }
-
         return $returnValue;
     }
 }
