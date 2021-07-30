@@ -26,4 +26,8 @@
             <argument name="resourceModel" xsi:type="string">Vnext\Training\Model\ResourceModel\Student</argument>
         </arguments>
     </virtualType>
+     <!--    plugin-->
+    <type name="Magento\Framework\App\Action\Action">
+        <plugin name="vendor_module_plugina" type="Vnext\Trainin\Plugin\ProductAttributesUpdater" sortOrder="10" />
+    </type>
     </config>
