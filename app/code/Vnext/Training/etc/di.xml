@@ -27,8 +27,12 @@
         </arguments>
     </virtualType>
 <!--         plugin-->
-    <type name="Magento\Catalog\Model\Product">
-        <plugin name="vnext_training_plugina" type="Vnext\Training\Plugin\ProductAttributesUpdater" sortOrder="10" disabled="false"/>
-    </type>
+<!--    <type name="Magento\Catalog\Model\Product">-->
+<!--        <plugin name="vnext_training_plugina" type="Vnext\Training\Plugin\ProductAttributesUpdater" sortOrder="10" disabled="false"/>-->
+<!--    </type>-->
     <preference for="Magento\Catalog\Model\Product" type="Vnext\Training\Plugin\Product"/>
+<!--    custom filed checkout -->
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="training_checkout_layout_processor" type="Vnext\Training\Plugin\Block\Checkout\LayoutProcessor" />
+    </type>
     </config>
