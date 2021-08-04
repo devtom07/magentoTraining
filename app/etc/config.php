@@ -248,6 +248,7 @@ return [
         'MagePal_GmailSmtpApp' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1,
+        'Vnext_Amount' => 1,
         'Vnext_Checkout' => 1,
         'Vnext_Simpleshipping' => 1,
         'Vnext_Training' => 1,
