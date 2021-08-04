@@ -32,7 +32,4 @@
 <!--    </type>-->
     <preference for="Magento\Catalog\Model\Product" type="Vnext\Training\Plugin\Product"/>
 <!--    custom filed checkout -->
-    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
-        <plugin name="training_checkout_layout_processor" type="Vnext\Training\Plugin\Block\Checkout\LayoutProcessor" />
-    </type>
     </config>
