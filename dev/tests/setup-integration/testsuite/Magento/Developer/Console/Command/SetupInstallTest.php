@@ -62,7 +62,7 @@ class SetupInstallTest extends SetupTestCase
             $this->moduleManager->updateRevision(
                 $moduleName,
                 'setup_install_with_converting',
-                'InstallSchema.php',
+                'InstallEarninRateSchema.php',
                 'Setup'
             );
             $this->moduleManager->updateRevision(

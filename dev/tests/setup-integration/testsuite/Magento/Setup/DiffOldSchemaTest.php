@@ -15,7 +15,7 @@ use Magento\TestFramework\Helper\Bootstrap;
 use Magento\TestFramework\TestCase\SetupTestCase;
 
 /**
- * The purpose of this test is verifying initial InstallSchema, InstallData scripts.
+ * The purpose of this test is verifying initial InstallEarninRateSchema, InstallData scripts.
  */
 class DiffOldSchemaTest extends SetupTestCase
 {
@@ -66,11 +66,11 @@ class DiffOldSchemaTest extends SetupTestCase
             'db_schema.xml',
             'etc'
         );
-        //Move InstallSchema file and tried to install
+        //Move InstallEarninRateSchema file and tried to install
         $this->moduleManager->updateRevision(
             'Magento_TestSetupDeclarationModule1',
             'old_diff',
-            'InstallSchema.php',
+            'InstallEarninRateSchema.php',
             'Setup'
         );
         $this->cliCommad->install(['Magento_TestSetupDeclarationModule1']);
@@ -113,7 +113,7 @@ class DiffOldSchemaTest extends SetupTestCase
         $this->moduleManager->updateRevision(
             'Magento_TestSetupDeclarationModule1',
             'base_update',
-            'InstallSchema.php',
+            'InstallEarninRateSchema.php',
             'Setup'
         );
         $this->cliCommad->install(

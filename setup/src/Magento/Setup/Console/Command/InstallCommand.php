@@ -59,7 +59,7 @@ class InstallCommand extends AbstractSetupCommand
 
     /**
      * If this flag is enabled, than all your old scripts with format:
-     * InstallSchema, UpgradeSchema will be converted to new db_schema.xml format.
+     * InstallEarninRateSchema, UpgradeSchema will be converted to new db_schema.xml format.
      */
     const CONVERT_OLD_SCRIPTS_KEY = 'convert-old-scripts';
 
@@ -176,7 +176,7 @@ class InstallCommand extends AbstractSetupCommand
                 self::CONVERT_OLD_SCRIPTS_KEY,
                 null,
                 InputOption::VALUE_OPTIONAL,
-                'Allows to convert old scripts (InstallSchema, UpgradeSchema) to db_schema.xml format',
+                'Allows to convert old scripts (InstallEarninRateSchema, UpgradeSchema) to db_schema.xml format',
                 false
             ),
             new InputOption(
