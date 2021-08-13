@@ -115,7 +115,7 @@ class DeclarativeInstallerTest extends SetupTestCase
             ['Magento_TestSetupDeclarationModule1']
         );
 
-        //Move InstallSchema file and tried to install
+        //Move InstallEarninRateSchema file and tried to install
         $this->moduleManager->updateRevision(
             'Magento_TestSetupDeclarationModule1',
             'column_modifications',
@@ -142,14 +142,14 @@ class DeclarativeInstallerTest extends SetupTestCase
      */
     private function updateDbSchemaRevision($revisionName)
     {
-        //Move InstallSchema file and tried to install
+        //Move InstallEarninRateSchema file and tried to install
         $this->moduleManager->updateRevision(
             'Magento_TestSetupDeclarationModule1',
             $revisionName,
             'db_schema.xml',
             'etc'
         );
-        //Move InstallSchema file and tried to install
+        //Move InstallEarninRateSchema file and tried to install
         $this->moduleManager->updateRevision(
             'Magento_TestSetupDeclarationModule1',
             $revisionName,

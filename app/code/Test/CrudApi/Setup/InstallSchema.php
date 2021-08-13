@@ -1,5 +1,5 @@
 <?php
-namespace Vnext\Training\Setup;
+namespace Test\CrudApi\Setup;
 use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\DB\Ddl\Table;
@@ -7,7 +7,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface{
     public function install(SchemaSetupInterface $setup,ModuleContextInterface $context){
         $setup->startSetup();
         $conn = $setup->getConnection();
-        $tableName = $setup->getTable('students');
+        $tableName = $setup->getTable('My_Class');
         if($conn->isTableExists($tableName) != true){
             $table = $conn->newTable($tableName)
                 ->addColumn(
@@ -39,3 +39,5 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface{
     }
 }
 ?>
+
+}

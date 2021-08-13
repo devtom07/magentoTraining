@@ -37,9 +37,9 @@ class InstallUpgradeTest extends \PHPUnit\Framework\TestCase
                     . 'Please use declarative schema approach in module\'s etc/db_schema.xml file'
                 );
                 $this->assertStringStartsNotWith(
-                    'InstallSchema',
+                    'InstallEarninRateSchema',
                     basename($file),
-                    'InstallSchema objects are obsolete. '
+                    'InstallEarninRateSchema objects are obsolete. '
                     . 'Please use declarative schema approach in module\'s etc/db_schema.xml file'
                 );
                 $this->assertStringStartsNotWith(
