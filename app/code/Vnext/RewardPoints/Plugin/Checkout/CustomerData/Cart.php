@@ -20,7 +20,7 @@ class Cart
         foreach ($point as $data){
         $money_spent = $data->getMoneySpent();
         }
-        $earning = round($total / $money_spent *10);
+        $earning = round($total / $money_spent);
         $result['extra_data'] = $earning;
 
         return $result;
