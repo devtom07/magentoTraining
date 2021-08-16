@@ -13,4 +13,7 @@
             <argument name="resourceModel" xsi:type="string">Vnext\RewardPoints\Model\ResourceModel\Earningrate</argument>
         </arguments>
     </virtualType>
+    <type name="Magento\Checkout\CustomerData\Cart">
+        <plugin name="cartPrivateDataDiscount" type="Vnext\RewardPoints\Plugin\Checkout\CustomerData\Cart"/>
+    </type>
 </config>
