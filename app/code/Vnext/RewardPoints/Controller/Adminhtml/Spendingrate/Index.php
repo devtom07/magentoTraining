@@ -1,5 +1,5 @@
 <?php
-namespace Vnext\RewardPoints\Controller\Adminhtml\Earningrate;
+namespace Vnext\RewardPoints\Controller\Adminhtml\Spendingrate;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
@@ -18,15 +18,13 @@ class Index extends \Magento\Backend\App\Action
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Vnext_RewardPoints::earningrate_list');
-        // $resultPage->addBreadcrumb(__('Question pending'), __('Question Pending'));
-        // $resultPage->addBreadcrumb(__('Manage Question Pending'), __('Manage Question Pending'));
-        $resultPage->getConfig()->getTitle()->prepend(__('Earing Rate'));
+        $resultPage->setActiveMenu('Vnext_RewardPoints::spendingrate_list');
+        $resultPage->getConfig()->getTitle()->prepend(__('Spending Rate List'));
         return $resultPage;
     }
 
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Vnext_RewardPoints::earningrate_list');
+        return $this->_authorization->isAllowed('Vnext_RewardPoints::spendingrate_list');
     }
 }

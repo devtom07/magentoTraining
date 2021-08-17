@@ -2,29 +2,29 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">point_earningrate_listing.point_earningrate_listing_data_source</item>
-            <item name="deps" xsi:type="string">point_earningrate_listing.point_earningrate_listing_data_source</item>
+            <item name="provider" xsi:type="string">point_spendingrate_listing.point_spendingrate_listing_data_source</item>
+            <item name="deps" xsi:type="string">point_spendingrate_listing.point_spendingrate_listing_data_source</item>
         </item>
-        <item name="spinner" xsi:type="string">point_earningrate_listing_columns</item>
+        <item name="spinner" xsi:type="string">point_spendingrate_listing_columns</item>
         <!--         <item name="buttons" xsi:type="array"><item name="add" xsi:type="array"><item name="name" xsi:type="string">add</item><item name="label" xsi:type="string" translate="true">Add New Post</item><item name="class" xsi:type="string">primary</item><item name="url" xsi:type="string">qaa/question/edit</item></item></item> -->
     </argument>
     <settings>
         <buttons>
             <button name="add">
-                <url path="point/earningrate/news"/>
+                <url path="point/spendingrate/news"/>
                 <class>primary</class>
-                <label translate="true">Add New Earning Rate</label>
+                <label translate="true">Add New Sending Rate</label>
             </button>
         </buttons>
-        <spinner>point_earningrate_listing</spinner>
+        <spinner>point_spendingrate_listing</spinner>
         <deps>
-            <dep>point_earningrate_listing.point_earningrate_listing_data_source</dep>
+            <dep>point_spendingrate_listing.point_spendingrate_listing_data_source</dep>
         </deps>
     </settings>
     <dataSource name="nameOfDataSource">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
-            <argument name="name" xsi:type="string">point_earningrate_listing_data_source</argument>
+            <argument name="name" xsi:type="string">point_spendingrate_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
             <argument name="requestFieldName" xsi:type="string">entity_id</argument>
             <argument name="data" xsi:type="array">
@@ -59,11 +59,11 @@
         <paging name="listing_paging"/>
         <exportButton name="export_button"/>
     </listingToolbar>
-    <columns name="point_earningrate_listing_columns">
+    <columns name="point_spendingrate_listing_columns">
         <settings>
             <childDefaults>
                 <param name="fieldAction" xsi:type="array">
-                    <item name="provider" xsi:type="string">point_earningrate_listing.point_earningrate_listing.point_earningrate_listing_columns_editor</item>
+                    <item name="provider" xsi:type="string">point_spendingrate_listing.point_spendingrate_listing.point_spendingrate_listing_columns_editor</item>
                     <item name="target" xsi:type="string">startEdit</item>
                     <item name="params" xsi:type="array">
                         <item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
@@ -108,21 +108,21 @@
                 <label translate="true">Customer Group</label>
             </settings>
         </column>
-        <column name="money_spent" class="Magento\Catalog\Ui\Component\Listing\Columns\Price">
+        <column name="discount_reserved" class="Magento\Catalog\Ui\Component\Listing\Columns\Price">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">textRange</item>
                     <item name="sorting" xsi:type="string">asc</item>
-                    <item name="label" xsi:type="string" translate="true">Money Spent</item>
+                    <item name="label" xsi:type="string" translate="true">Discount Reserved</item>
                 </item>
             </argument>
         </column>
-        <column name="earing_points">
+        <column name="spending_point">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">textRange</item>
                     <item name="sorting" xsi:type="string">asc</item>
-                    <item name="label" xsi:type="string" translate="true">Earning Points</item>
+                    <item name="label" xsi:type="string" translate="true">Spending Point</item>
                 </item>
             </argument>
         </column>
@@ -135,7 +135,7 @@
                 </item>
             </argument>
         </column>
-        <actionsColumn name="actions" class="Vnext\RewardPoints\Ui\Component\Listing\Column\EarningActions">
+        <actionsColumn name="actions" class="Vnext\RewardPoints\Ui\Component\Listing\Column\SendingActions">
             <settings>
                 <indexField>entity_id</indexField>
             </settings>

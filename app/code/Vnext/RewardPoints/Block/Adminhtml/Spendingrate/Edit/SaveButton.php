@@ -5,7 +5,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace Vnext\RewardPoints\Block\Adminhtml\Earningrate\Edit;
+namespace Vnext\RewardPoints\Block\Adminhtml\Spendingrate\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 use Magento\Ui\Component\Control\Container;
@@ -29,7 +29,7 @@ class SaveButton implements ButtonProviderInterface
                     'buttonAdapter' => [
                         'actions' => [
                             [
-                                'targetName' => 'point_earningrate_form.point_earningrate_form',
+                                'targetName' => 'point_spendingrate_form.point_spendingrate_form',
                                 'actionName' => 'save',
                                 'params' => [
                                     true,
@@ -63,7 +63,7 @@ class SaveButton implements ButtonProviderInterface
                         'buttonAdapter' => [
                             'actions' => [
                                 [
-                                    'targetName' => 'point_earningrate_form.point_earningrate_form',
+                                    'targetName' => 'point_spendingrate_form.point_spendingrate_form',
                                     'actionName' => 'save',
                                     'params' => [
                                         true,
@@ -85,7 +85,7 @@ class SaveButton implements ButtonProviderInterface
                         'buttonAdapter' => [
                             'actions' => [
                                 [
-                                    'targetName' => 'point_earningrate_form.point_earningrate_form',
+                                    'targetName' => 'point_spendingrate_form.point_spendingrate_form',
                                     'actionName' => 'save',
                                     'params' => [
                                         true,
@@ -107,7 +107,7 @@ class SaveButton implements ButtonProviderInterface
                         'buttonAdapter' => [
                             'actions' => [
                                 [
-                                    'targetName' => 'point_earningrate_form.point_earningrate_form',
+                                    'targetName' => 'point_spendingrate_form.point_spendingrate_form',
                                     'actionName' => 'save',
                                     'params' => [
                                         true,

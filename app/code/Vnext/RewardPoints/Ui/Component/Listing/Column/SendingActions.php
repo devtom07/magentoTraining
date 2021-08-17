@@ -15,13 +15,13 @@ use Magento\Framework\Escaper;
 /**
  * Class to build edit and delete link for each item.
  */
-class EarningActions extends Column
+class SendingActions extends Column
 {
     /**
      * Url path
      */
-    const URL_PATH_EDIT = 'point/earningrate/edit';
-    const URL_PATH_DELETE = 'point/earningrate/delete';
+    const URL_PATH_EDIT = 'point/spendingrate/edit';
+    const URL_PATH_DELETE = 'point/spendingrate/delete';
 
     /**
      * @var UrlInterface

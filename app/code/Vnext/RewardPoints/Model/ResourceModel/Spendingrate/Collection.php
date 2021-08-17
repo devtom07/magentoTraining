@@ -1,5 +1,5 @@
 <?php
-namespace Vnext\RewardPoints\Model\ResourceModel\Earningrate;
+namespace Vnext\RewardPoints\Model\ResourceModel\Spendingrate;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -13,6 +13,6 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     protected function _construct()
     {
-        $this->_init('Vnext\RewardPoints\Model\Earningrate', 'Vnext\RewardPoints\Model\ResourceModel\Earningrate');
+        $this->_init('Vnext\RewardPoints\Model\Spendingrate', 'Vnext\RewardPoints\Model\ResourceModel\Spendingrate');
     }
 }

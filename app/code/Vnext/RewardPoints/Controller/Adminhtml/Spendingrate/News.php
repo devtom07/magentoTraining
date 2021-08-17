@@ -1,12 +1,12 @@
 <?php
-namespace Vnext\RewardPoints\Controller\Adminhtml\Earningrate;
+namespace Vnext\RewardPoints\Controller\Adminhtml\Spendingrate;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 
 /**
  * Create CMS block action.
  */
-class News extends \Vnext\RewardPoints\Controller\Adminhtml\Earningrate\Block implements HttpGetActionInterface
+class News extends \Vnext\RewardPoints\Controller\Adminhtml\Spendingrate\Block implements HttpGetActionInterface
 {
     /**
      * @var \Magento\Backend\Model\View\Result\ForwardFactory

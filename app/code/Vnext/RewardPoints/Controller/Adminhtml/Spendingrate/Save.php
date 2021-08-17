@@ -3,12 +3,12 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Vnext\RewardPoints\Controller\Adminhtml\Earningrate;
+namespace Vnext\RewardPoints\Controller\Adminhtml\Spendingrate;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Backend\App\Action\Context;
-use Vnext\RewardPoints\Model\ResourceModel\Earningrate as Resource;
-use Vnext\RewardPoints\Model\Earningrate;
-use Vnext\RewardPoints\Model\EarningrateFactory;
+use Vnext\RewardPoints\Model\ResourceModel\Spendingrate as Resource;
+use Vnext\RewardPoints\Model\Spendingrate;
+use Vnext\RewardPoints\Model\SpendingrateFactory;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Registry;
@@ -16,7 +16,7 @@ use Magento\Framework\Registry;
 /**
  * Save CMS block action.
  */
-class Save extends \Vnext\RewardPoints\Controller\Adminhtml\Earningrate\Block implements HttpPostActionInterface
+class Save extends \Vnext\RewardPoints\Controller\Adminhtml\Spendingrate\Block implements HttpPostActionInterface
 {
     /**
      * @var DataPersistorInterface
@@ -44,7 +44,7 @@ class Save extends \Vnext\RewardPoints\Controller\Adminhtml\Earningrate\Block im
         Context $context,
         Registry $coreRegistry,
         DataPersistorInterface $dataPersistor,
-        EarningrateFactory $earningrateFactory,
+        SpendingrateFactory $earningrateFactory,
         Resource $resource
     ) {
         $this->dataPersistor = $dataPersistor;

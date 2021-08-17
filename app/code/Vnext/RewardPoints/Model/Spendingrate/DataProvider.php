@@ -3,10 +3,9 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Vnext\RewardPoints\Model\Earningrate;
+namespace Vnext\RewardPoints\Model\Spendingrate;
 
-use Vnext\RewardPoints\Model\EarningrateFactory;
-use Vnext\RewardPoints\Model\ResourceModel\Earningrate\CollectionFactory;
+use Vnext\RewardPoints\Model\ResourceModel\Spendingrate\CollectionFactory;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Store\Model\StoreManagerInterface;
 
@@ -51,12 +50,12 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
             $this->loadedData[$block->getId()] = $block->getData();
         }
 
-        $data = $this->dataPersistor->get('earing_rate');
+        $data = $this->dataPersistor->get('spending_rate');
         if (!empty($data)) {
             $block = $this->collection->getNewEmptyItem();
             $block->setData($data);
             $this->loadedData[$block->getId()] = $block->getData();
-            $this->dataPersistor->clear('earing_rate');
+            $this->dataPersistor->clear('spending_rate');
         }
         return $this->loadedData;
     }

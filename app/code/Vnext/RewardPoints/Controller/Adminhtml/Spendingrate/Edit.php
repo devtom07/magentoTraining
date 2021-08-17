@@ -3,7 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Vnext\RewardPoints\Controller\Adminhtml\Earningrate;
+namespace Vnext\RewardPoints\Controller\Adminhtml\Spendingrate;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 
@@ -17,13 +17,13 @@ class Edit extends \Magento\Backend\App\Action implements HttpGetActionInterface
      *
      * @var \Magento\Framework\View\Result\PageFactory
      */
-    protected $_earningrate;
+    protected $_spendingrate;
     /**
      * Authorization level of a basic admin session
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'Vnext_RewardPoints::earingrate_list';
+    const ADMIN_RESOURCE = 'Vnext_RewardPoints::spendingrate_list';
     /**
      * Core registry
      *
@@ -44,9 +44,9 @@ class Edit extends \Magento\Backend\App\Action implements HttpGetActionInterface
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\Registry $coreRegistry,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
-        \Vnext\RewardPoints\Model\EarningrateFactory $_earningrate
+        \Vnext\RewardPoints\Model\SpendingrateFactory $_spendingrate
     ) {
-        $this->_earningrate = $_earningrate;
+        $this->_spendingrate = $_spendingrate;
         $this->resultPageFactory = $resultPageFactory;
         $this->_coreRegistry = $coreRegistry;
         parent::__construct($context);
@@ -59,7 +59,7 @@ class Edit extends \Magento\Backend\App\Action implements HttpGetActionInterface
      */
     protected function initPage($resultPage)
     {
-        $resultPage->setActiveMenu('Vnext_RewardPoints::earningrate_list');
+        $resultPage->setActiveMenu('Vnext_RewardPoints::spendingrate_list');
         return $resultPage;
     }
 
@@ -72,25 +72,25 @@ class Edit extends \Magento\Backend\App\Action implements HttpGetActionInterface
     public function execute()
     {
         $id = $this->getRequest()->getParam('entity_id');
-        $model = $this->_earningrate->create();
+        $model = $this->_spendingrate->create();
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {
-                $this->messageManager->addErrorMessage(__('This earning rate no longer exists.'));
+                $this->messageManager->addErrorMessage(__('This spending rate rate no longer exists.'));
                 /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
                 return $resultRedirect->setPath('*/*/');
             }
         }
-        $this->_coreRegistry->register('earing_rate', $model);
+        $this->_coreRegistry->register('spending_rate', $model);
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
         $this->initPage($resultPage)->addBreadcrumb(
-            $id ? __('Edit Earning Rate') : __('New Block'),
-            $id ? __('Edit Earning Rate') : __('New Block')
+            $id ? __('Edit Spending Rate') : __('New Block'),
+            $id ? __('Edit Spending Rate') : __('New Block')
         );
-        $resultPage->getConfig()->getTitle()->prepend(__('Earning Rate Detail'));
-        $resultPage->getConfig()->getTitle()->prepend($model->getId() ? 'Earning Rate Detail' : __('New Earning Rate'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Spending Rate Detail'));
+        $resultPage->getConfig()->getTitle()->prepend($model->getId() ? 'Spending Rate Detail' : __('New Spending Rate'));
         return $resultPage;
 
     }

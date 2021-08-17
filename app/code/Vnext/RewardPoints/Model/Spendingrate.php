@@ -1,7 +1,7 @@
 <?php
 namespace Vnext\RewardPoints\Model;
 
-class Earningrate extends \Magento\Framework\Model\AbstractModel
+class Spendingrate extends \Magento\Framework\Model\AbstractModel
 {
     /**
      * Undocumented function
@@ -27,7 +27,7 @@ class Earningrate extends \Magento\Framework\Model\AbstractModel
      */
     public function _construct()
     {
-        $this->_init('Vnext\RewardPoints\Model\ResourceModel\Earningrate');
+        $this->_init('Vnext\RewardPoints\Model\ResourceModel\Spendingrate');
     }
 
 }

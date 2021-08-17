@@ -3,7 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Vnext\RewardPoints\Model\Earningrate\Source;
+namespace Vnext\RewardPoints\Model\Spendingrate\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 

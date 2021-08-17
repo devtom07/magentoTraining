@@ -1,5 +1,5 @@
 <?php
-namespace Vnext\RewardPoints\Model\ResourceModel\Earningrate\Grid;
+namespace Vnext\RewardPoints\Model\ResourceModel\Spendingrate\Grid;
 
 use Vnext\RewardPoints\Model\Earningrate;
 use Magento\Framework\Api;
