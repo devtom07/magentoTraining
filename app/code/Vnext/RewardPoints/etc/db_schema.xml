@@ -26,4 +26,15 @@
             <column name="entity_id"/>
         </constraint>
     </table>
+    <table name="customer_point" resource="default" engine="innodb" comment="Customer Point">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="int"  name="point" nullable="true" comment="Point" />
+        <column xsi:type="int"  name="point_spent" nullable="true" comment="Point Spent" />
+        <column xsi:type="int" name="customer_id" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="CUSTOMER ID"/>
+        <column xsi:type="varchar" name="customer_email" nullable="false" length="255" comment="Email"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
 </schema>

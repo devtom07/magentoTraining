@@ -51,6 +51,7 @@ class GroupCustomers implements OptionSourceInterface
                 'value' => $value['value'],
             ];
         }
+        array_shift($options);
         return $options;
     }
 }

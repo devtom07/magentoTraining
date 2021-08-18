@@ -76,21 +76,24 @@
                 </multiselect>
             </formElements>
         </field>
-        <field name="customer_group_id" formElement="input">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">block</item>
-                    <item name="cols" xsi:type="number">15</item>
-                    <item name="rows" xsi:type="number">5</item>
-                    <item name="dataType" translate="true" xsi:type="string">text</item>
-                </item>
-            </argument>
+        <field name="customer_group_id" formElement="select">
             <settings>
+                <dataType>text</dataType>
                 <label translate="true">Customer Group</label>
                 <dataScope>customer_group_id</dataScope>
             </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Vnext\RewardPoints\Model\Earningrate\Source\GroupCustomers">
+
+                        </options>
+                        <caption translate="true">-- Please Select --</caption>
+                    </settings>
+                </select>
+            </formElements>
         </field>
-        <field name="money_spent" formElement="input">
+        <field name="money_spent"  formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">block</item>
