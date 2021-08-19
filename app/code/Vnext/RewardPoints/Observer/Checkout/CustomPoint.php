@@ -26,24 +26,22 @@ class CustomPoint implements ObserverInterface
         $order = $observer->getEvent()->getOrder();
         $customerId = $order->getCustomerId();
         $customEmail = $order->getCustomerEmail();
-        $total = $order->getGrandTotal();
+        $total = $order->getSubtotal();
         $earning_point = $this->earning->create();
-        $point_spent = $this->point->create();
         if ($customerId != null) {
             foreach ($earning_point as $data) {
                 $money_spent = $data->getMoneySpent();
             }
-            foreach ($point_spent as $points) {
-                $customer_point_id = $points->getCustomerId();
-                $customer_point = $points->getPoint();
-                $id = $points->getId();
-            }
+
             $objectManager = ObjectManager::getInstance();
             $question = $objectManager->create('Vnext\RewardPoints\Model\Point');
             $earning = round($total / $money_spent);
-            if (isset($customer_point_id)) {
-                $postUpdate = $question->load($id);
-                $point_customer_one = $customer_point + $earning;
+            $customPointId = $question->load($customerId,'customer_id')->getCustomerId();
+            if (isset($customPointId)) {
+                $idPoint = $question->load($customerId,'customer_id')->getId();
+                $customerPoint = $question->load($customerId,'customer_id')->getPoint();
+                $postUpdate = $question->load($idPoint);
+                $point_customer_one = $customerPoint + $earning;
                 $postUpdate->setPoint($point_customer_one);
                 $postUpdate->save();
             } else {
