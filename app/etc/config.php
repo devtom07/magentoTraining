@@ -254,6 +254,7 @@ return [
         'Vnext_Checkout' => 1,
         'Vnext_CustomAccount' => 1,
         'Vnext_CustomImport' => 1,
+        'Vnext_ProductShippingMethod' => 1,
         'Vnext_RewardPoints' => 1,
         'Vnext_Simpleshipping' => 1,
         'Vnext_Training' => 1,
