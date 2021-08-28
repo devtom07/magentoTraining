@@ -90,13 +90,6 @@
                 </item>
             </argument>
         </column>
-        <column name="website_id" class="Magento\Store\Ui\Component\Listing\Column\Store">
-            <settings>
-                <label translate="true">Store View</label>
-                <bodyTmpl>ui/grid/cells/html</bodyTmpl>
-                <sortable>true</sortable>
-            </settings>
-        </column>
         <column name="customer_group_id" component="Magento_Ui/js/grid/columns/select">
             <settings>
                 <options class="Vnext\RewardPoints\Model\Earningrate\Source\GroupCustomers"/>

@@ -37,4 +37,15 @@
             <column name="entity_id"/>
         </constraint>
     </table>
+    <table name="money_point" resource="default" engine="innodb" comment="Money Point">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="int"  name="quote_id" nullable="true" comment="Quote id" />
+        <column xsi:type="int"  name="money" nullable="true" comment="Money" />
+        <column xsi:type="int"  name="point" nullable="true" comment="Point" />
+        <column xsi:type="timestamp"  name="create_at" default="CURRENT_TIMESTAMP" nullable="true" comment="Create at" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
 </schema>
